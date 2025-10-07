@@ -1,0 +1,13 @@
+*.jou
+*.log
+*.str
+*.xpr.lock
+*.zip
+.Xil/
+.cache/
+.hw/
+.ip_user_files/
+.runs/
+.sim/
+*.data/
+*.tmp/
