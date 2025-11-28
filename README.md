@@ -1,7 +1,40 @@
-# UART-Communication-System
+# PS-Driven On-Board Testbench for RTL Validation over UART  
+Using the Zynq Processing System as a Live Stimulus/Response Engine
 
-This repo contains two main folders : 
+## Overview
+This project repurposes the Zynq Processing System (PS) as an active, on-board testbench for validating RTL running in the Programmable Logic (PL). Instead of relying on external simulation environments, the embedded CPU injects stimulus into the PL at runtime, receives processed responses, and performs immediate checking or logging. This method enables hardware-speed validation, continuous interaction, and rapid iteration without external test equipment.
 
---> Vivado project : Contains the inregrated inverter and UART driver RTL design in PL along with exported .xsa file
+UART serves as the communication backbone. Data enters through MIO-mapped UART, reaches the PS, is forwarded to the PL through UART EMIO, processed by the target RTL, and is returned through the same path. Software running in Vitis orchestrates stimulus generation and response capture, using straightforward C-based drivers and console output functions such as `xil_printf()`.
 
---> Vitis : Contains baseline.c embedded programm to use the PS from Vitis console for stimulus send and capturing results from PL RTL.  
+This workflow demonstrates how Zynq-class SoCs eliminate traditional verification bottlenecks by letting the embedded CPU operate as the integrated testbench for real hardware.
+
+---
+
+## Architecture Summary
+- **MIO UART Interface**: Carries external stimulus into the PS.  
+- **PS Software Testbench**: C code running on ARM generates, forwards, and validates data.  
+- **EMIO UART Interface**: Bridges PS to PL through the fabric.  
+- **RTL Processing Block**: Example inverter RTL with UART driver for encode/decode.  
+- **Round-Trip Validation**: PL sends processed results back to PS for immediate capture and display.
+
+---
+
+## Reproduction Steps  
+The full setup is documented in a three-part blog series:
+
+### **Blog 1 — Designing the UART Driver for the RTL Module**  
+UART framing, FSM design, PL-side receiver/transmitter architecture.  
+**Link:** *[Insert Blog 1 URL]*
+
+### **Blog 2 — Constructing and Exporting the PS–PL Integrated Design in Vivado**  
+Block design creation, EMIO configuration, address mapping, .xsa export.  
+**Link:** *[Insert Blog 2 URL]*
+
+### **Blog 3 — Embedded Programming with Vitis for UART-Based Stimulus and Response Capture**  
+PS as live testbench, C-based stimulus generation, console I/O capture.  
+**Link:** *[Insert Blog 3 URL]*
+
+---
+
+## Purpose of the Project Name
+**PS-Driven On-Board Testbench for RTL Validation over UART** captures the technique’s intention: the CPU actively drives and verifies hardware in the fabric, transforming the Zynq SoC into a self-contained verification platform that replaces external benches with real-time embedded execution.
