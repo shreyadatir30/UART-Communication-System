@@ -1,7 +1,6 @@
 # PS-Driven On-Board Testbench for RTL Validation over UART  
 Using the Zynq Processing System as a Live Stimulus/Response Engine
 
-![main_setup](https://github.com/user-attachments/assets/954b1508-f5f8-49d9-b39f-7f9cb4c84dae)
 
 ## Overview
 This project repurposes the Zynq Processing System (PS) as an active, on-board testbench for validating RTL running in the Programmable Logic (PL). Instead of relying on external simulation environments, the embedded CPU injects stimulus into the PL at runtime, receives processed responses, and performs immediate checking or logging. This method enables hardware-speed validation, continuous interaction, and rapid iteration without external test equipment.
@@ -41,5 +40,5 @@ PS as live testbench, C-based stimulus generation, console I/O capture.
 
 ---
 
-## Purpose of the Project Name
-**PS-Driven On-Board Testbench for RTL Validation over UART** captures the technique’s intention: the CPU actively drives and verifies hardware in the fabric, transforming the Zynq SoC into a self-contained verification platform that replaces external benches with real-time embedded execution.
+
+![main_setup](https://github.com/user-attachments/assets/954b1508-f5f8-49d9-b39f-7f9cb4c84dae)
