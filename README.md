@@ -1,6 +1,8 @@
 # PS-Driven On-Board Testbench for RTL Validation over UART  
 Using the Zynq Processing System as a Live Stimulus/Response Engine
 
+![main_setup](https://github.com/user-attachments/assets/954b1508-f5f8-49d9-b39f-7f9cb4c84dae)
+
 ## Overview
 This project repurposes the Zynq Processing System (PS) as an active, on-board testbench for validating RTL running in the Programmable Logic (PL). Instead of relying on external simulation environments, the embedded CPU injects stimulus into the PL at runtime, receives processed responses, and performs immediate checking or logging. This method enables hardware-speed validation, continuous interaction, and rapid iteration without external test equipment.
 
@@ -9,6 +11,7 @@ UART serves as the communication backbone. Data enters through MIO-mapped UART, 
 This workflow demonstrates how Zynq-class SoCs eliminate traditional verification bottlenecks by letting the embedded CPU operate as the integrated testbench for real hardware.
 
 ---
+<img width="624" height="177" alt="Full_Diagram" src="https://github.com/user-attachments/assets/0bfa4337-a140-4955-ba69-825566d8a14c" />
 
 ## Architecture Summary
 - **MIO UART Interface**: Carries external stimulus into the PS.  
@@ -25,6 +28,7 @@ The full setup is documented in a three-part blog series:
 ### **Blog 1 — Designing the UART Driver for the RTL Module**  
 UART framing, FSM design, PL-side receiver/transmitter architecture.  
 **Link:** *https://shreyadatir30.github.io/posts/2025/09/uart-design-part1/*
+<img width="626" height="248" alt="ZyNQ_Top" src="https://github.com/user-attachments/assets/08122755-d69f-44ec-b770-ec27dd1cab6e" />
 
 
 ### **Blog 2 — Constructing and Exporting the PS–PL Integrated Design in Vivado**  
