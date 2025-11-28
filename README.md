@@ -24,15 +24,16 @@ The full setup is documented in a three-part blog series:
 
 ### **Blog 1 — Designing the UART Driver for the RTL Module**  
 UART framing, FSM design, PL-side receiver/transmitter architecture.  
-**Link:** *[Insert Blog 1 URL]*
+**Link:** *https://shreyadatir30.github.io/posts/2025/09/uart-design-part1/*
+
 
 ### **Blog 2 — Constructing and Exporting the PS–PL Integrated Design in Vivado**  
 Block design creation, EMIO configuration, address mapping, .xsa export.  
-**Link:** *[Insert Blog 2 URL]*
+**Link:** *https://shreyadatir30.github.io/posts/2025/09/uart-design-part2/*
 
 ### **Blog 3 — Embedded Programming with Vitis for UART-Based Stimulus and Response Capture**  
 PS as live testbench, C-based stimulus generation, console I/O capture.  
-**Link:** *[Insert Blog 3 URL]*
+**Link:** *https://shreyadatir30.github.io/posts/2025/09/uart-ps-pl-vitis/*
 
 ---
 
